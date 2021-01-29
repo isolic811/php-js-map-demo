@@ -10,12 +10,15 @@ if (isset($_GET["action"])){
         echo json_encode(DataGenerator::generateStartData());
     }
     else if ($_GET["action"] == GENERATE_NEW_ENTRY) {
-        echo json_encode(DataGenerator::generateCoordinate());
+        $coordinate = DataGenerator::generateCoordinate();
+
+        echo json_encode($coordinate->__serialize());
     }
     else {
         $error["Error"] = "Requested action is not available!";
         echo json_encode($error);
     }
-}else{
+}
+else{
     include("templates/index.html");
 }

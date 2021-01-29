@@ -13,11 +13,11 @@ $("#get-data").click( function()
             url:"index.php",
             data:
                 {action:"get_start_data"}
-        }).done(function(data){
+        }).done(function(coordinates){
             myFeatureGroup.clearLayers();
-            let myData = JSON.parse(data);
-            myData.forEach(function(entry) {
-                L.marker([entry.longitude, entry.latitude]).addTo(myFeatureGroup);
+            let parsedCoordinates = JSON.parse(coordinates);
+            parsedCoordinates.forEach(function(coordinate) {
+                L.marker([coordinate.longitude, coordinate.latitude]).addTo(myFeatureGroup);
             });
         });
     }
@@ -30,9 +30,9 @@ $("#get-entry").click( function()
             url:"index.php",
             data:
                 {action:"get_new_entry"}
-        }).done(function(data){
-            let myData = JSON.parse(data);
-            L.marker([myData.longitude, myData.latitude]).addTo(myFeatureGroup);
+        }).done(function(coordinate){
+            let parsedCoordinate = JSON.parse(coordinate);
+            L.marker([parsedCoordinate.longitude, parsedCoordinate.latitude]).addTo(myFeatureGroup);
         });
     }
 );
@@ -44,9 +44,9 @@ $("#get-zone-entry").click( function()
             url:"index.php",
             data:
                 {action:"get_new_entry"}
-        }).done(function(data){
-            let myData = JSON.parse(data);
-            L.circle([myData.longitude, myData.latitude], {
+        }).done(function(coordinate){
+            let parsedCoordinate = JSON.parse(coordinate);
+            L.circle([parsedCoordinate.longitude, parsedCoordinate.latitude], {
                 color: 'red',
                 fillColor: '#f03',
                 fillOpacity: 0.5,

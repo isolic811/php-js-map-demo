@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 include ("NumberGenerator.php");
+include("Coordinate.php");
 
 /**
  * Class DataGenerator
@@ -15,29 +16,26 @@ class DataGenerator
     private const MIN_LONGITUDE = 15.8340;
 
     private const NUMBER_OF_START_COORDINATES = 50;
-    private const PRECISCION = 4;
+    private const PRECISION = 4;
 
     /**
-     * @return mixed
+     * @return Coordinate
      */
-    public static function generateCoordinate(): array
+    public static function generateCoordinate(): Coordinate
     {
         $longitude = NumberGenerator::generateRandomNumber(
             self::MAX_LATITUDE,
             self::MIN_LATITUDE,
-            self::PRECISCION
+            self::PRECISION
         );
 
         $latitude = NumberGenerator::generateRandomNumber(
             self::MAX_LONGITUDE,
             self::MIN_LONGITUDE,
-            self::PRECISCION
+            self::PRECISION
         );
 
-        $coordinate["longitude"] = $longitude;
-        $coordinate["latitude"] = $latitude;
-
-        return $coordinate;
+        return new Coordinate($longitude, $latitude);
     }
 
     /**
@@ -49,7 +47,8 @@ class DataGenerator
 
         for ($i = 0; $i < self::NUMBER_OF_START_COORDINATES; $i++)
         {
-            $coordinates[] = self::generateCoordinate();
+            $coordinate = self::generateCoordinate();
+            $coordinates[] = $coordinate->__serialize();
         }
 
         return $coordinates;
