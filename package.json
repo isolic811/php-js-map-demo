@@ -1,0 +1,26 @@
+{
+  "name": "php-js-map-demo",
+  "version": "1.0.0",
+  "description": "This is a proof of concept for simple mapping tool visualization",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.5.1",
+    "leaflet": "^1.7.1",
+    "package-lock.json": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isolic811/php-js-map-demo.git"
+  },
+  "author": "Ivan Solic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isolic811/php-js-map-demo/issues"
+  },
+  "homepage": "https://github.com/isolic811/php-js-map-demo#readme"
+}
