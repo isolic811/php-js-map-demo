@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leaflet Web Map Demo</title>
+    <link rel="stylesheet" href="../node_modules/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="../public/css/global.css" />
+    <script src="../node_modules/leaflet/dist/leaflet.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../public/js/map-visualization.js"></script>
+</head>
+
+
+<body>
+
+<div class="container col-xxl-9 align-items-center text-center">
+
+    <div class="row standard-div">
+        <div class="col-xl-12 text-center">
+            <h1>Locations and zones of infected persons</h1>
+        </div>
+    </div>
+
+    <div class="row standard-div" >
+        <div class="col-sm-4">
+            <button type="button" id="get-data" class="btn btn-primary">Get random data</button>
+        </div>
+
+        <div class="col-sm-4">
+            <button type="button" id="get-entry" class="btn btn-primary">Get new entry</button>
+        </div>
+
+        <div class="col-sm-4">
+            <button type="button" id="get-zone-entry" class="btn btn-primary">Get new zone</button>
+        </div>
+    </div>
+
+    <div class="row map-div">
+        <div class="col-xl-12">
+            <div id="map">
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <script src="../public/js/map-visualization.js"></script>
+</footer>
